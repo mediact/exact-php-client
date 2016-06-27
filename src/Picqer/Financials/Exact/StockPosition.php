@@ -36,4 +36,52 @@ class StockPosition extends Model
      * @var string
      */
     protected $primaryKey = 'ItemId';
+
+    /**
+     * Load a model by it's GUID
+     *
+     * @param string $id
+     *
+     * @return StockPosition
+     */
+    public function find($id)
+    {
+        $result = $this->connection()->get($this->url, [
+            $this->primaryKey => "guid'$id'"
+        ]);
+
+        return new self($this->connection(), $result);
+    }
+
+    /**
+     * Load a model by it's GUID and select the fields
+     *
+     * @param string $id
+     * @param string $select
+     *
+     * @return void
+     *
+     * @throws \RuntimeException Method not supported.
+     */
+    public function findWithSelect($id, $select = '')
+    {
+        throw new \RuntimeException(__METHOD__ . ' is not supporterd by the API');
+    }
+
+    /**
+     * Filter a collection
+     *
+     * @param string $filter
+     * @param string $expand
+     * @param string $select
+     * @param null   $system_query_options
+     *
+     * @return void
+     *
+     * @throws \RuntimeException Method not supported.
+     */
+    public function filter($filter, $expand = '', $select = '', $system_query_options = null)
+    {
+        throw new \RuntimeException(__METHOD__ . ' is not supporterd by the API');
+    }
 }
