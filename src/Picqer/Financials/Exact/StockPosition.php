@@ -65,7 +65,7 @@ class StockPosition extends Model
      */
     public function findWithSelect($id, $select = '')
     {
-        throw new \RuntimeException(__METHOD__ . ' is not supporterd by the API');
+        throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
     }
 
     /**
@@ -82,6 +82,6 @@ class StockPosition extends Model
      */
     public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
-        throw new \RuntimeException(__METHOD__ . ' is not supporterd by the API');
+        throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
     }
 }
