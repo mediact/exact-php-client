@@ -44,7 +44,9 @@ class Me extends Model
         'Language',
         'Phone',
         'PhoneExtension',
-        'Mobile'
+        'Mobile',
+        'ServerTime',
+        'ServerUtcOffset'
     ];
 
 
