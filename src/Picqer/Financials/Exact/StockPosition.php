@@ -37,13 +37,6 @@ class StockPosition extends Model
      */
     protected $primaryKey = 'ItemId';
 
-    /**
-     * Load a model by it's GUID
-     *
-     * @param string $id
-     *
-     * @return StockPosition
-     */
     public function find($id)
     {
         $result = $this->connection()->get($this->url, [
@@ -53,33 +46,11 @@ class StockPosition extends Model
         return new self($this->connection(), reset($result));
     }
 
-    /**
-     * Load a model by it's GUID and select the fields
-     *
-     * @param string $id
-     * @param string $select
-     *
-     * @return void
-     *
-     * @throws \RuntimeException Method not supported.
-     */
     public function findWithSelect($id, $select = '')
     {
         throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
     }
 
-    /**
-     * Filter a collection
-     *
-     * @param string $filter
-     * @param string $expand
-     * @param string $select
-     * @param null   $system_query_options
-     *
-     * @return void
-     *
-     * @throws \RuntimeException Method not supported.
-     */
     public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
         throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
