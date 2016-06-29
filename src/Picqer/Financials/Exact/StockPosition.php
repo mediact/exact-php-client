@@ -50,7 +50,7 @@ class StockPosition extends Model
             $this->primaryKey => "guid'$id'"
         ]);
 
-        return new self($this->connection(), $result);
+        return new self($this->connection(), reset($result));
     }
 
     /**
