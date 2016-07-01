@@ -22,7 +22,9 @@
  * @property  $Language 
  * @property  $Phone 
  * @property  $PhoneExtension 
- * @property  $Mobile 
+ * @property  $Mobile
+ * @property  $ServerTime
+ * @property  $ServerUtcOffset
  */
 class Me extends Model
 {
