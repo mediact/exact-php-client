@@ -43,7 +43,11 @@ class StockPosition extends Model
             $this->primaryKey => "guid'$id'"
         ]);
 
-        return new self($this->connection(), reset($result));
+        $attributes = is_array($result) && count($result) > 0
+            ? reset($result)
+            : [];
+
+        return new self($this->connection(), $attributes);
     }
 
     public function findWithSelect($id, $select = '')
