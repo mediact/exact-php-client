@@ -22,7 +22,9 @@
  * @property  $Language 
  * @property  $Phone 
  * @property  $PhoneExtension 
- * @property  $Mobile 
+ * @property  $Mobile
+ * @property  $ServerTime
+ * @property  $ServerUtcOffset
  */
 class Me extends Model
 {
@@ -44,7 +46,9 @@ class Me extends Model
         'Language',
         'Phone',
         'PhoneExtension',
-        'Mobile'
+        'Mobile',
+        'ServerTime',
+        'ServerUtcOffset'
     ];
 
 

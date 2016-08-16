@@ -36,4 +36,27 @@ class StockPosition extends Model
      * @var string
      */
     protected $primaryKey = 'ItemId';
+
+    public function find($id)
+    {
+        $result = $this->connection()->get($this->url, [
+            $this->primaryKey => "guid'$id'"
+        ]);
+
+        $attributes = is_array($result) && count($result) > 0
+            ? reset($result)
+            : [];
+
+        return new self($this->connection(), $attributes);
+    }
+
+    public function findWithSelect($id, $select = '')
+    {
+        throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
+    }
+
+    public function filter($filter, $expand = '', $select = '', $system_query_options = null)
+    {
+        throw new \RuntimeException(__METHOD__ . ' is not supported by the API');
+    }
 }
